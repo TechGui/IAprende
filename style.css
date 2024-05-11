@@ -1,0 +1,24 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Michroma&display=swap");
+
+
+html, body, [class*="css"] {
+    font-size: 17px;
+}
+
+body button {
+    background-image: src("src/assets/microphone.png");
+}
+
+#title-style {
+    color: #8552fd;
+}
+
+#subtitle-style {
+    color: rgb(40, 159, 214);
+}
+
+#footer a {
+    color: #976aff;
+    text-decoration: none;
+}
