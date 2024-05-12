@@ -1,8 +1,6 @@
 import streamlit as st
 from dotenv import load_dotenv
 import os
-import pyaudio
-import speech_recognition as sr
 import google.generativeai as gen_ai
 
 # Configure Streamlit page settings
@@ -116,40 +114,6 @@ if user_prompt:
     # Display Gemini's response
     with st.chat_message("assistant", avatar=IAprende_Teacher):
         st.markdown(gemini_response.text)
-
-# Function to convert speech to text
-def speech_to_text():
-  r = sr.Recognizer()
-  with sr.Microphone() as source:
-    st.write("Listening...")
-    audio = r.listen(source)
-  try:
-    text = r.recognize_google(audio, language="pt-BR,en-US")
-    return text
-  except sr.UnknownValueError:
-    st.write("Sorry, I could not understand your speech.")
-    return ""
-  except sr.RequestError as e:
-    st.write(f"Sorry, an error occurred while processing your speech: {e}")
-    return ""
-
-
-# Get user's speech input
-if st.button("Speak 🎙", key="speak_button"):
-    user_speech = speech_to_text()
-else:
-    user_speech = ""
-
-# Add user's speech to chat and display it
-if user_speech:
-  st.chat_message("user", avatar=user_img).markdown(user_speech)
-
-  # Send user's speech to Gemini and get the response
-  gemini_response = st.session_state.chat_session.send_message(user_speech)
-
-  # Display Gemini's response
-  with st.chat_message("assistant", avatar=IAprende_Teacher):
-    st.markdown(gemini_response.text)
 
 # Display the footer
 st.markdown(f"<p id='footer' style='font-family: Montserrat; font-size: 12px; color: #8c8c8c;'>Desenvolvido por <a href='https://github.com/TechGui' target='_blank'>Guilherme da Rosa Silva</a> com a ajuda da <a href='https://www.linkedin.com/school/aluracursos/?originalSubdomain=br' target='_blank'>Alura</a> e <a href='https://www.linkedin.com/company/google/' target='_blank'>Google</a>.</p>", unsafe_allow_html=True)
