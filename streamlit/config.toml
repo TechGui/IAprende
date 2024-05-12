@@ -15,6 +15,11 @@ level = "debug"
 # Default: true
 magicEnabled = true
 
+[theme]
+base="dark"
+primaryColor="#a555ff"
+secondaryBackgroundColor="#0e0e0e"
+
 
 
 [server]
