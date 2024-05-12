@@ -13,6 +13,7 @@ st.set_page_config(
 # Defining  variables
 load_dotenv()
 IAprende_logo = "src/assets/e.png"
+IAprende_Introduction = "src/assets/IA.png"
 IAprende_Teacher = "src/assets/IAprendeTeacher1.jpg"
 IAprende_img = "src/assets/IAprendeTeacher2.jpg"
 user_img = "src/assets/user.png"
@@ -70,8 +71,9 @@ if "chat_session" not in st.session_state:
 with open("style.css") as css:
   st.markdown(f"<style>{css.read()}</style>", unsafe_allow_html=True)
 
-## Display the header
-st.markdown("<h2 id='title' style='font-family: Michroma; font-weight: 100;'><span id='title-style'>IA</span>prende - Aprenda Inglês com a Inteligência do Futuro.</h2>", unsafe_allow_html=True)
+## Display the logo
+st.image(IAprende_Introduction, width=200, use_column_width=True)
+st.write("\n")
 
 ## Espaçamento
 st.write("\n")
