@@ -13,7 +13,7 @@ st.set_page_config(
 # Defining  variables
 load_dotenv()
 IAprende_logo = "src/assets/e.png"
-IAprende_Introduction = "src/assets/IA.png"
+IAprende_Introduction = "src/assets/IAprende-noBG.png"
 IAprende_Teacher = "src/assets/IAprendeTeacher1.jpg"
 IAprende_img = "src/assets/IAprendeTeacher2.jpg"
 user_img = "src/assets/user.png"
