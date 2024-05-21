@@ -129,4 +129,4 @@ except Exception as e:
         st.markdown("[Obter API Key](https://aistudio.google.com/app/apikey)")
         
     else:
-        st.error("Ocorreu um erro desconhecido.")
+        st.error("Ocorreu um erro desconhecido. Por-favor digite novamente.")
